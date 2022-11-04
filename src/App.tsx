@@ -1,15 +1,29 @@
-import React from 'react';
-
+// import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { HomePage } from './pages/Home';
-import { PageTwo } from './pages/PageTwo';
+import { HomePage, PageTwo } from './pages';
+import { Layout } from './libs';
+
+// const page_list = [
+//   {
+//     label: 'home',
+//     component: HomePage,
+//     path: '/',
+//   },
+//   {
+//     label: 'page 2',
+//     component: PageTwo,
+//     path: '/page2',
+//   },
+// ]
 
 const App = () => (
   <BrowserRouter>
-    <Switch>
-      <Route path="/" exact component={HomePage} />
-      <Route path="/page2" exact component={PageTwo} />
-    </Switch>
+    <Layout>
+      <Switch>
+        <Route path="/" exact component={HomePage} />
+        <Route path="/page2" exact component={PageTwo} />
+      </Switch>
+    </Layout>
   </BrowserRouter>
 );
 
